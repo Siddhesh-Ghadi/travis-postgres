@@ -5,8 +5,7 @@ arch:
 services:
   - postgresql
   
-  
-before_script:
-  - psql -c 'create database bitfield;' -U postgres;
-  - psql -c 'create database bitfield;' -U travis;
-  - sudo psql -c 'create database bitfield;' -U postgres;
+script:
+  - psql -c 'create database bitfield1;' -U postgres;
+  - psql -c 'create database bitfield2;' -U travis;
+  - sudo psql -c 'create database bitfield3;' -U postgres;
