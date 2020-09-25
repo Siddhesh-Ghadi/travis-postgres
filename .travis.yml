@@ -1,0 +1,12 @@
+arch:
+  - amd64
+  - ppc64le
+  
+services:
+  - postgresql
+  
+  
+before_script:
+  - psql -c 'create database bitfield;' -U postgres;
+  - psql -c 'create database bitfield;' -U travis;
+  - sudo psql -c 'create database bitfield;' -U postgres;
