@@ -7,5 +7,5 @@ services:
   
 script:
   - psql -c 'create database bitfield2;' -U travis;
-  - psql -c 'create database bitfield1;' -U postgres;
+  - psql -c "'create database bitfield1;' -U postgres";
   - sudo psql -c 'create database bitfield3;' -U postgres;
