@@ -1,14 +1,11 @@
 arch:
   - amd64
   - ppc64le
-  
-dist: bionic  
+
 services:
   - postgresql
   
 script:
-  - psql -c 'create database bitfield1;' -U postgres;
   - psql -c 'create database bitfield2;' -U travis;
+  - psql -c 'create database bitfield1;' -U postgres;
   - sudo psql -c 'create database bitfield3;' -U postgres;
-  - sudo psql -c 'create database bitfield2;' -U root;
-  - sudo cat /etc/postgresql/9.6/main/pg_hba.conf
