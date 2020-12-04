@@ -7,6 +7,9 @@ dist: bionic
 addons:
   postgresql: "9.6"
   apt:
+    sources:
+    - sourceline: 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
+      key_url: 'https://www.postgresql.org/media/keys/ACCC4CF8.asc'
     packages:
     - postgresql-9.6
     - postgresql-client-9.6
