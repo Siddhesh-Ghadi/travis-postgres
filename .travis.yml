@@ -2,8 +2,17 @@ arch:
   - amd64
   - ppc64le
 
-services:
-  - postgresql
+dist: bionic
+
+addons:
+  postgresql: "9.6"
+  apt:
+    packages:
+    - postgresql-9.6
+    - postgresql-client-9.6
+env:
+  global:
+  - PGPORT=5433
   
 script:
   - psql -c 'create database bitfield2;' -U travis;
